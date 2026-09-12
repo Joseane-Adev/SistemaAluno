@@ -1,0 +1,37 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #edde52;
+    /* amarelo */
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+header {
+    padding: 30px;
+}
+
+header img {
+    max-width: 200px;
+    /* controla o tamanho do slogan */
+    height: auto;
+}
+
+.menu {
+    margin-top: 40px;
+}
+
+.menu button {
+    background-color: #de0f0f;
+    color: white;
+    padding: 15px 30px;
+    margin: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.menu button:hover {
+    background-color: #45a049;
+}
