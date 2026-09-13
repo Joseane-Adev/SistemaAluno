@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+{%load static%}
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro</title>
+    <link rel='stylesheet' href= "{%static '/css/cadastro.css'%}">
+</head>
+
+<body>
+    <h1>Cadastro</h1>
+    <form method='POST'>
+        {% csrf_token %}
+        <label for="nome_aluno">Nome do Aluno(a)</label>
+        <input type='text'  id="nome_aluno"  name="nome_aluno" required>
+
+        <label for="data_nascimento">Data de nascimento</label>
+        <input type="date"  name="data_nascimento"  id="data_nascimento" required>
+
+        <label for="nacionalidade_aluno">Nacionalidade</label>
+        <input type="text"  id="nacionalidade_aluno"  name="nacionalidade_aluno">
+
+        <label for="nome_mae">Nome da mãe</label>
+        <input type="text"  id="nome_mae"  name="nome_mae">
+        <label for="numero_mae">Numero da mãe</label>
+        <input type="text"  id="numero_mae"  name="numero_mae">
+
+        <label for="nome_pai">Nome do pai</label>
+        <input type="text"  id="nome_pai"  name="nome_pai">
+        <label for="numero_pai">Numero do pai</label>
+        <input type="text"  id="numero_pai"  name="numero_pai">
+
+        <label for="endereco">Endereço</label>
+        <input type="text"  name="endereco"  id="endereco" required>
+
+        <label for="bairro">Bairro</label>
+        <input type="text"  id="bairro"  name="bairro" required>
+
+        <label for="numero_casa">Número da casa</label>
+        <input type="tex"  id="numero_casa"  name="numero_casa" required>
+
+        <label for="telefonne_extra">Telefone extra</label>
+        <input type="text"  name="telefone_extra"  id="telefonne_extra">
+
+        <label for="turma">Turma</label>
+        <input type="text"  id="turma"  name="turma" required>
+
+        <button type="submit">Matricular</button>
+
+        <!--logica de aviso-->
+        {%if messages %}
+            <ul>
+                {%for msg in messages%}
+                    <li style='color:blue;'>{{msg}}</li>
+                {%endfor%}
+            </ul>
+        {%endif%}
+
+
+    </form>
+</body>
+
+</html>

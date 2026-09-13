@@ -17,9 +17,10 @@ Including another URLconf
 
 from django.contrib import admin
 from django.urls import path
-from aluno.views import resposta
+from aluno.views import resposta,cadastro
 
 urlpatterns = [
     #path("admin/", admin.site.urls),
-    path('', resposta , name = 'main')#caminho da página
+    path('', resposta , name = 'main'),#caminho da página
+    path('cadastro/', cadastro , name='cadastro')
 ]
