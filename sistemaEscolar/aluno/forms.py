@@ -24,12 +24,17 @@ class  CadastroForms(forms.ModelForm):
             required= True,    
         
         )
-        
     nacionalidade_aluno = forms.CharField(
-            label= 'Nacionalidade',
-            required= True,
-            max_length= 30,
+                    label= 'Nacionalidade',
+                    required= True,
+                    max_length= 30,
         )
+    turma = forms.CharField(
+                label= 'Turma',
+                max_length= 30,
+        )
+    
+    
     nome_mae = forms.CharField(
             label= 'Nome da mãe',
             max_length= 100,
@@ -70,11 +75,6 @@ class  CadastroForms(forms.ModelForm):
             max_length= 20,
             required= False
         )
-    turma = forms.CharField(
-            label= 'Turma',
-            max_length= 30,
-        )
-
     def clean(self):
 
         cleaned_data = super().clean()

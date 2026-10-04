@@ -1,37 +1,56 @@
 body {
-    font-family: Arial, sans-serif;
-    background-color: #e6f05c;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
     /* amarelo */
     margin: 0;
     padding: 0;
     text-align: center;
+    color: #333
 }
 
+/*cabeçalho*/
 header {
-    padding: 30px;
+    padding: 50px;
+    background-color: #f3f2ef;
+    box-shadow: 0 10px 8px rgba(51, 51, 43, 0.1);
+
 }
 
-header img {
-    max-width: 500px;
+header img .logo {
+    max-width: 600px;
     /* controla o tamanho do slogan */
     height: auto;
 }
 
+/*main conteudo principal*/
 .menu {
-    margin-top: 40px;
+    margin-top: 50px;
 }
 
 .menu button {
-    background-color: #de0f0f;
-    color: white;
+    background-color: #66b0ec;
+    color: #222121;
     padding: 15px 30px;
-    margin: 10px;
+    margin: 12px;
     border: none;
-    border-radius: 5px;
+    border-radius: 8px;
     font-size: 16px;
     cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .menu button:hover {
-    background-color: #45a049;
+    background: #43da43;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 10px rgba(5, 5, 5, 0.25);
+}
+
+/* Responsividade */
+@media (max-width: 600px) {
+    .menu button {
+        width: 80%;
+        margin: 10px auto;
+        display: block;
+    }
 }

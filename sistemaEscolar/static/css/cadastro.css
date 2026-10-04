@@ -1,47 +1,177 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #b10707;
-    padding: 20px;
+    background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+    padding: 40px;
+    color: #2c3e50;
+}
+
+.nome_cadastro {
+    text-align: center;
 }
 
 form {
-    max-width: 600px;
+    max-width: 1000px;
     margin: auto;
-    background: #ebdada;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px #1d70ec;
+    background: #f9f9f9;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(52, 152, 219, 0.25);
+    transition: box-shadow 0.3s ease;
+
+
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    /* duas colunas */
+    gap: 30px;
+    /* espaço entre os campos */
+}
+
+/* Labels e inputs ocupam toda a largura da coluna */
+form label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 6px;
+    color: #283847;
+    text-align: left;
+}
+
+form input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccd6e0;
+    border-radius: 6px;
+    font-size: 15px;
+}
+
+/* Botão ocupa as duas colunas */
+form button {
+    grid-column: span 2;
+    /* ocupa duas colunas */
+    justify-self: center;
+    /* centraliza dentro do grid */
+    display: inline-block;
+    width: auto;
+    /* largura menor */
+    margin-top: 15px;
+    padding: 6px 12px;
+    /* altura reduzida */
+    background: #3498db;
+    color: #030303;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 14px;
+    /* fonte proporcional */
+    transition: all 0.3s ease;
+}
+
+form button:hover {
+    background: #43da43;
+    transform: translateY(-2px);
+}
+
+form .btn {
+    width: 250px;
+    /* largura fixa do botão */
+    margin: 0 auto;
+    /* centraliza */
+    display: block;
 }
 
 label {
     display: block;
-    margin-top: 10px;
-    font-weight: bold;
+    margin-top: 15px;
+    font-weight: 600;
+    color: #34495e;
 }
 
 input {
     width: 100%;
-    padding: 8px;
-    margin-top: 5px;
-    border: 1px solid #dbe1ec;
-    border-radius: 4px;
+    padding: 10px;
+    margin-top: 6px;
+    border: 1px solid #ccd6e0;
+    border-radius: 6px;
+    font-size: 15px;
+    transition: border-color 0.3s ease;
 }
 
-button {
-    margin-top: 20px;
-    padding: 10px 20px;
-    background: #064fc4;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
+input:focus {
+    border-color: #3498db;
+    outline: none;
 }
 
 button:hover {
-    background: #45a049;
+    background: #43da43;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(52, 152, 219, 0.35);
 }
 
-
 .invalid-feedback {
-    color: #064fc4;
+    color: #e74c3c;
+    font-size: 12px;
+    margin-top: 3px;
+    font-weight: 400;
+    text-align: left;
+}
+
+.msg .alert {
+    /* mesma largura do botão */
+    margin: 8px auto;
+    text-align: center;
+    font-size: 12px;
+    padding: 6px 10px;
+    display: inline-block;
+}
+
+/* Mensagens globais */
+.msg {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 0 15px;
+
+}
+
+/* Estilo base para alertas */
+.alert {
+    padding: 12px 20px;
+    margin-bottom: 15px;
+    border-radius: 6px;
+    font-size: 15px;
+    font-weight: 500;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+
+}
+
+/* Diferentes tipos de alerta */
+.alert-info {
+    background-color: #e3f2fd;
+    color: #0d47a1;
+    border-left: 5px solid #2196f3;
+}
+
+.alert-success {
+    background-color: #e8f5e9;
+    color: #1b5e20;
+    border-left: 5px solid #4caf50;
+
+}
+
+.alert-warning {
+    background-color: #fff8e1;
+    color: #f57f17;
+
+}
+
+.alert-danger {
+    background-color: #ffebee;
+    color: #b71c1c;
+
+}
+
+/* Efeito hover para dar vida */
+.alert:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }

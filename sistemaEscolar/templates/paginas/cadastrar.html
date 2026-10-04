@@ -12,7 +12,7 @@
 
 <body>
      <div class="container">
-        <h1 class="mb-4">Cadastro</h1>
+        <h1 class="nome_cadastro">Ficha de Cadastro</h1>
         <form method="POST" class="needs-validation" novalidate>
             {% csrf_token %}
 
@@ -34,10 +34,11 @@
             {% endfor %}
 
             <button type="submit" class="btn btn-primary">Matricular</button>
+            <button type='button' class = 'btn btn-primary' onclick= "location.href='{% url 'main'%}'"> Voltar</button>
 
             <!-- lógica de aviso -->
             {% if messages %}
-                <div class="mt-3">
+                <div class="msg">
                     {% for msg in messages %}
                         <div class="alert alert-info">{{ msg }}</div>
                     {% endfor %}
