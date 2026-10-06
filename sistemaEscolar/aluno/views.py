@@ -46,3 +46,14 @@ def cadastro(request):
         
         formulario = CadastroForms()
     return render(request, 'paginas/cadastrar.html', {'formulario': formulario})
+
+def pesquisar_alunos(request):
+    #capturar o valor digitado no banco de dados
+    nome_digitado = request.GET.get('nome_aluno')
+
+    if nome_digitado:
+        resultado_pesquisa = Cadastro.objects.filter(nome_aluno__icontains = nome_digitado)
+    else:
+        resultado_pesquisa = []
+
+    return render(request, 'paginas/pesquisar.html' , {'aluno': resultado_pesquisa})

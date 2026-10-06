@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<>, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Pesquisar alunos</h1>
+</body>
+    <form method="get">
+        <label for="nome_aluno">Qual o nome do estudante</label>
+        <input type="text" id='nome_aluno' name="nome_aluno" placeholder="Digite o nome">
+        <button type="submit">Pesquisar</button> 
+
+    </form>
+    {%if aluno%}
+        <h2>Lista de Estudantes</h2>
+        <ul>
+            {%for estudante in aluno%}
+                <li>{{estudante.nome_aluno}} - {{estudante.matricula}}</li>
+            {%endfor%}
+        </ul>
+    {%else%}
+        <p>Nenhum aluno encontrado</p>
+    {%endif%}
+
+</html>

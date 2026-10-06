@@ -17,10 +17,11 @@ Including another URLconf
 
 from django.contrib import admin
 from django.urls import path
-from aluno.views import resposta,cadastro
+from aluno.views import resposta,cadastro, pesquisar_alunos
 
 urlpatterns = [
     #path("admin/", admin.site.urls),
     path('', resposta , name = 'main'),#caminho da página
-    path('cadastro/', cadastro , name='cadastro')
+    path('cadastro/', cadastro , name='cadastro'),
+    path('pesquisar/', pesquisar_alunos, name= 'pesquisar' )
 ]
