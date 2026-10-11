@@ -32,9 +32,11 @@
                     {% endif %}
                 </div>
             {% endfor %}
-
-            <button type="submit" class="btn btn-primary">Matricular</button>
-            <button type='button' class = 'btn btn-primary' onclick= "location.href='{% url 'main'%}'"> Voltar</button>
+            <div class= 'button-group'>
+                <button type="submit" class="btn btn-primary">Matricular</button>
+                <button type='button' class = 'btn btn-primary' onclick= "location.href='{% url 'main'%}'"> Voltar</button>
+            </div>
+            
 
             <!-- lógica de aviso -->
             {% if messages %}

@@ -37,7 +37,8 @@ class  CadastroForms(forms.ModelForm):
     data_nascimento = forms.DateField(
             input_formats=['%d/%m/%Y', '%Y-%m-%d'],
             label= 'Data de nascimento',
-            required= True,    
+            required= True, 
+            widget=forms.DateInput(attrs={'type': 'date'})   
         
         )
     nacionalidade_aluno = forms.CharField(
@@ -49,7 +50,14 @@ class  CadastroForms(forms.ModelForm):
                 label= 'Turma',
                 max_length= 30,
         )
-    
+    data_matricula = forms.DateField(
+        
+        input_formats=['%d/%m/%Y', '%Y-%m-%d'],
+        label='Data da matrícula',
+        required=True,
+        widget=forms.DateInput(attrs={'type': 'date'})
+                           
+    )
     
     nome_mae = forms.CharField(
             label= 'Nome da mãe',
@@ -73,7 +81,7 @@ class  CadastroForms(forms.ModelForm):
         )
     endereco = forms.CharField(
             label= 'Endereço',
-            max_length= 100,
+            max_length= 200,
             required= True,
         )
     bairro = forms.CharField(
@@ -91,6 +99,20 @@ class  CadastroForms(forms.ModelForm):
             max_length= 20,
             required= False
         )
+    alergias = forms.CharField(
+         label= 'Alergia',
+         max_length=200,
+    )
+
+    medicacao = forms.CharField(
+         label='Medicação',
+         max_length= 200,
+         widget= forms.TextInput(
+                         attrs={
+                                 'placeholder': 'Qual medicação pode tomar?',
+                         }
+         )
+    )
 
     #validaçoes
     def clean(self):

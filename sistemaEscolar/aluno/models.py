@@ -1,23 +1,31 @@
 from django.db import models
+from django.utils import timezone
 
 # Create your models here.
 
 class Cadastro(models.Model):
     #representar no banco
+    #SOBRE O ESTUDANTE
     nome_aluno = models.CharField(max_length=100)
     data_nascimento = models.DateField()
     nacionalidade_aluno = models.CharField(max_length= 30)
     turma = models.CharField(max_length=50)
+    data_matricula = models.DateField('Data da matrícula', default= timezone.now)
 
+    #RESPONSAVEIS
     nome_mae = models.CharField(max_length= 100, blank= True)
     numero_mae = models.CharField(max_length=20, blank=True)
     nome_pai = models.CharField(max_length=100, blank= True)
     numero_pai = models.CharField(max_length=20, blank= True)
-    
-    endereco = models.CharField(max_length= 100)
+
+    #INFORMAÇOES DO ALUNO
+    endereco = models.CharField(max_length= 200)
     bairro = models.CharField(max_length=100)
     numero_casa = models.CharField(max_length=20)
     telefone_extra = models.CharField(max_length=20, default='', blank=True)
+    alergias = models.CharField(max_length= 200, default='', blank=True)
+    medicacao = models.CharField(max_length=200, default='', blank=True)
+    #SOBRE MATRICULA
     matricula = models.CharField(max_length=20, blank=True)
     
 

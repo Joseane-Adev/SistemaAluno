@@ -20,8 +20,8 @@ form {
 
 
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    /* duas colunas */
+    grid-template-columns: 1fr 1fr 1fr;
+    /* tres colunas */
     gap: 30px;
     /* espaço entre os campos */
 }
@@ -43,16 +43,19 @@ form input {
     font-size: 15px;
 }
 
-/* Botão ocupa as duas colunas */
-form button {
-    grid-column: span 2;
+form .button-group {
+    grid-column: span 3;
+    display: flex;
     /* ocupa duas colunas */
     justify-self: center;
     /* centraliza dentro do grid */
-    display: inline-block;
-    width: auto;
-    /* largura menor */
+    gap: 15px;
     margin-top: 15px;
+}
+
+/* Botão ocupa as duas colunas */
+form .button-group button {
+    /* largura menor */
     padding: 6px 12px;
     /* altura reduzida */
     background: #3498db;
