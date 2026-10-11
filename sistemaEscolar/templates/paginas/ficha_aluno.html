@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ficha do estudante</title>
+</head>
+
+<body>
+    <h1>Ficha do Aluno</h1>
+
+    <p><strong>Nome:</strong> {{ ficha_estudante.nome_aluno }}</p>
+    <p><strong>Data de Nascimento:</strong> {{ ficha_estudante.data_nascimento }}</p>
+    <p><strong>Nacionalidade:</strong> {{ ficha_estudante.nacionalidade_aluno }}</p>
+    <p><strong>Turma:</strong> {{ ficha_estudante.turma }}</p>
+
+    <h2>Responsáveis</h2>
+    <p><strong>Mãe:</strong> {{ ficha_estudante.nome_mae }} - {{ ficha_estudante.numero_mae }}</p>
+    <p><strong>Pai:</strong> {{ ficha_estudante.nome_pai }} - {{ ficha_estudante.numero_pai }}</p>
+
+    <h2>Endereço</h2>
+    <p><strong>Rua:</strong> {{ ficha_estudante.endereco }}</p>
+    <p><strong>Bairro:</strong> {{ ficha_estudante.bairro }}</p>
+    <p><strong>Número:</strong> {{ ficha_estudante.numero_casa }}</p>
+    <p><strong>Telefone Extra:</strong> {{ ficha_estudante.telefone_extra }}</p>
+
+    <h2>Dados da Matrícula</h2>
+    <p><strong>Matrícula:</strong> {{ ficha_estudante.matricula }}</p>
+
+    <a href="{% url 'ficha_pdf' ficha_estudante.pk %}" class="btn btn-primary">Gerar PDF</a>
+
+</body>
+
+</html>

@@ -24,7 +24,16 @@
         <button class="menu" onclick="location.href='{%url 'pesquisar'%}'">Pesquisar</button>
         <button class="menu" onclick="">Atualizar</button>
         <button class="menu" onclick="">Remover</button>
-        <button class="menu" onclick="">Sair</button>
+        <button class="menu" onclick="location.href='{%url 'logout'%}'">Sair</button>
+
+        {% if messages %}
+            <ul class="messages">
+                {% for message in messages %}
+                    <li class="{{ message.tags }}">{{ message }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    
     </main>
 
 </body>

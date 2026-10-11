@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+{%load static%}
+<head>
+    <meta charset="UTF-8">
+    <title>Login - Sistema Escolar</title>
+    <link rel="stylesheet" href="{%static '/css/login.css'%}">
+</head>
+<body>
+    <div class="login-container">
+        <h2>Sistema Escolar</h2>
+        <form method="post">
+            {% csrf_token %}
+            <label for="nome">Nome</label>
+            <input type="text" id="nome" name="nome_login" required>
+
+            <label for="senha">Senha</label>
+            <input type="password" id="senha" name="senha" required>
+
+            <button type="submit">Entrar</button>
+
+            
+            {% if messages %}
+                <ul class="messages">
+                    {% for message in messages %}
+                        <li class="{{ message.tags }}">{{ message }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        </form>
+    </div>
+</body>
+</html>

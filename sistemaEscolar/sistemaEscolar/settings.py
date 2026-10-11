@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     'aluno',
     
+    
 ]
 
 MIDDLEWARE = [
@@ -141,3 +142,6 @@ MAILERS = {
         "BACKEND": "django.core.mail.backends.console.EmailBackend",
     },
 }
+
+LOGIN_URL = 'login'
+LOGIN_REDIRECT_URL = 'main'

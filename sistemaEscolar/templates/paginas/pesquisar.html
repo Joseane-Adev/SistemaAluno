@@ -20,7 +20,11 @@
         <h2>Lista de Estudantes</h2>
         <ul>
             {%for estudante in aluno%}
-                <li>{{estudante.nome_aluno}} - {{estudante.matricula}}</li>
+                <li>
+                    <a href= "{% url 'ficha_aluno' estudante.pk %}">
+                        {{estudante.nome_aluno}} - {{estudante.matricula}}
+                    </a>
+                </li>
             {%endfor%}
         </ul>
     {%else%}

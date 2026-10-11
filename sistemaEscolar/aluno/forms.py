@@ -2,6 +2,22 @@ from django import forms
 import re
 from .models import Cadastro
 
+class LoginForms(forms.Form):
+     nome_login = forms.CharField(
+          label= 'Nome de login',
+          required = True,
+          max_length=100,
+          
+     )
+
+     senha = forms.CharField(
+          label= 'Senha',
+          required = True,
+          max_length= 70,
+          widget=forms.PasswordInput
+
+     )
+
 class  CadastroForms(forms.ModelForm):
     class Meta:
              model = Cadastro
